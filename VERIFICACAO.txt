@@ -1,0 +1,18 @@
+VERIFICACAO LH-PETS - 30/10/2026
+
+ZIP original encontrado em Downloads e extraido sem erro.
+Alteracoes: projeto atualizado para net10.0, compativel com o SDK instalado;
+README atualizado; script de testes corrigido para enumerar respostas JSON.
+Compilacao: .NET SDK 10.0.400, zero erros e zero avisos.
+Execucao local: http://localhost:5050.
+Testes HTTP aprovados: GET e POST clientes; GET e POST pets;
+GET pets por cliente; IDs automaticos; isolamento entre clientes;
+HTTP 400 para cliente inexistente, email invalido e nome vazio.
+Swagger: /swagger/index.html e /swagger/v1/swagger.json retornam 200.
+Validacao adicional pela interface interativa Swagger concluida em 30/10/2026: POST clientes e POST pets retornaram 201; os tres GET retornaram 200, incluindo o filtro por ClienteId=1.
+
+Requer .NET SDK 10. O primeiro restore requer internet para baixar Swagger.
+Extrair o ZIP, abrir a pasta LH-Pets e executar dotnet run.
+Acessar http://localhost:5050/swagger.
+A entrega no AVA exige o link de um repositorio publico no GitHub.
+

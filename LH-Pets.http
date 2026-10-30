@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:5050
+
+### 1. Listar clientes (inicialmente vazio)
+GET {{baseUrl}}/api/clientes
+
+### 2. Cadastrar cliente
+POST {{baseUrl}}/api/clientes
+Content-Type: application/json
+
+{
+  "nome": "Ana Silva",
+  "cpf": "12345678901",
+  "email": "ana@example.com"
+}
+
+### 3. Cadastrar pet de cliente 1
+POST {{baseUrl}}/api/pets
+Content-Type: application/json
+
+{
+  "nome": "Mel",
+  "especie": "Cachorro",
+  "raca": "Vira-lata",
+  "clienteId": 1
+}
+
+### 4. Listar todos os pets
+GET {{baseUrl}}/api/pets
+
+### 5. Listar apenas pets do cliente 1
+GET {{baseUrl}}/api/pets/cliente/1
+
+### 6. Testar validação: ClienteId inexistente (esperado HTTP 400)
+POST {{baseUrl}}/api/pets
+Content-Type: application/json
+
+{
+  "nome": "Bidu",
+  "especie": "Cachorro",
+  "raca": "Beagle",
+  "clienteId": 999
+}
